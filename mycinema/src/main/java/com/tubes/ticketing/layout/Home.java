@@ -91,7 +91,7 @@ public class Home extends JFrame {
         lowerTitleLabel.setText("BOOKING SYSTEM");
         lowerTitleLabel.setForeground(Color.WHITE);
 
-        homeFrame = new JFrame("Login");
+        homeFrame = new JFrame("Home - Select Your Ticket");
         homeFrame.setSize(600, 400);
         homeFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         homeFrame.setLocationRelativeTo(null);
