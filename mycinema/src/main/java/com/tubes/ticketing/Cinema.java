@@ -14,7 +14,7 @@ public class Cinema extends AbsCinema {
        assignMovieToHall();
 
    }
-
+//Todo Polymorphism
    @Override 
    public void setName(String name) {
        this.name = name;

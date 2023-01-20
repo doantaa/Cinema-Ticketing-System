@@ -11,7 +11,7 @@ import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 
-
+//Todo Inheritance
 public class Login extends JFrame {
 
 
@@ -23,6 +23,7 @@ public class Login extends JFrame {
 
 
     private void initComponents() {
+        // Todo Object
         loginButton = new JButton();
         usernameField = new JTextField();
         usernameLabel = new JLabel();
@@ -34,6 +35,7 @@ public class Login extends JFrame {
         JPanel backPanel = new JPanel();
 
         //setting jframe
+
         loginFrame = new JFrame("Login");
         loginFrame.setSize(600, 400);
         loginFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -109,16 +111,23 @@ public class Login extends JFrame {
         lowerTitleLabel.setText("BOOKING SYSTEM");
         lowerTitleLabel.setForeground(Color.WHITE);
 
-        loginFrame.add(usernameLabel);
         loginFrame.add(usernameField);
-        loginFrame.add(passwordLabel);
         loginFrame.add(passwordField);
         loginFrame.add(loginButton);
-        loginFrame.add(loginLabel);
-        loginFrame.add(upperTitleLabel);
-        loginFrame.add(lowerTitleLabel);
+
+        //Todo Array of object
+        JLabel[] arrayLabel = {
+                usernameLabel, loginLabel, passwordLabel, upperTitleLabel, lowerTitleLabel
+        };
+        for(JLabel jlabel: arrayLabel){
+            loginFrame.add(jlabel);
+        }
+
         loginFrame.add(backPanel);
+
+
         loginFrame.setVisible(true);
+
     }
 
     private void loginButtonPerformed(java.awt.event.ActionEvent evt) {

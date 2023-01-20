@@ -26,7 +26,7 @@ public class Ticket {
         LocalDateTime now = LocalDateTime.now();
         return dtf.format(now);
     }
-
+//Todo Polymorphism
     @Override
     public String toString() {
         return
