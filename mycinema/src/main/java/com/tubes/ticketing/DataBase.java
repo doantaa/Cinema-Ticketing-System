@@ -9,9 +9,9 @@ public class DataBase {
     final static private String[]
             user1 = {
             "fullname",
-            "username",
-            "email",
-            "password"},
+            "1",
+            "1",
+            "1"},
 
             user2 = {
                     "IT Telkom",
