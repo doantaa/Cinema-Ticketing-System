@@ -8,16 +8,16 @@ public class DataBase {
 
     final static private String[]
             user1 = {
-            "fullname",
-            "1",
-            "1",
-            "1"},
+            "Ananta Wardana Hartanta",
+            "admin",
+            "ananta@ittelkom-pwt.ac.id",
+            "admin"},
 
             user2 = {
                     "IT Telkom",
                     "ittelkompurwokerto",
                     "ittelkom@gmail.com",
-                    "ittelkece"};
+                    "ittp"};
 
 
     static private ArrayList<String[]> user = new ArrayList<>(5);
