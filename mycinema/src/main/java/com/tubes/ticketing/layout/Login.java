@@ -12,6 +12,7 @@ import java.io.File;
 import java.io.IOException;
 
 //Todo Inheritance
+// Todo Class
 public class Login extends JFrame {
 
 
@@ -45,7 +46,7 @@ public class Login extends JFrame {
 
         backPanel.setBackground(new Color(15,0,0));
         backPanel.setSize(600,400);
-
+        // Todo Exception Handling
         // Font Configuration
         try{
             poppinsMedium = Font.createFont(Font.TRUETYPE_FONT, new File("mycinema/src/res/font/Poppins-Medium.ttf"));

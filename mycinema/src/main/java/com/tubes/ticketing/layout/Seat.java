@@ -1030,7 +1030,7 @@ public class Seat extends javax.swing.JFrame {
     
     private void a0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_a0ActionPerformed
         chkbxAction(a0, 'A', 0);
-// TODO add your handling code here:
+
     }//GEN-LAST:event_a0ActionPerformed
 
     private void a2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_a2ActionPerformed
