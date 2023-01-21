@@ -7,6 +7,7 @@ public class DataBase {
 
 
     final static private String[]
+
             user1 = {
             "Ananta Wardana Hartanta",
             "admin",
@@ -17,7 +18,14 @@ public class DataBase {
                     "IT Telkom",
                     "ittelkompurwokerto",
                     "ittelkom@gmail.com",
-                    "ittp"};
+                    "ittp"},
+
+            user3 = {
+                    "Admin Kasir",
+                    "adminkasir",
+                    "adminkasir@ittelkom-pwt.ac.id",
+                    "adminkasir"
+            };
 
 
     static private ArrayList<String[]> user = new ArrayList<>(5);
@@ -27,6 +35,7 @@ public class DataBase {
         
         user.add(user1);
         user.add(user2);
+        user.add(user3);
 
         
         if(datafield == "fname"){
