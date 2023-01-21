@@ -1022,11 +1022,7 @@ public class Seat extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    
-  // The following MASSIVE HUNK OF CODE is used to reserve a ticket with a visual representation in the frame
-    
-   // To properly resereve or recalim the seats, a MASSIVE database is requred 
-      
+
     
     private void a0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_a0ActionPerformed
         chkbxAction(a0, 'A', 0);
