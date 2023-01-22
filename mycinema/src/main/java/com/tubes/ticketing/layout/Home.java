@@ -7,11 +7,9 @@ package com.tubes.ticketing.layout;
 import com.tubes.ticketing.App;
 import com.tubes.ticketing.Cinema;
 import com.tubes.ticketing.Employee;
-import com.tubes.ticketing.Schedule;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
 import java.io.File;
 import java.io.IOException;
 
@@ -20,9 +18,7 @@ import java.io.IOException;
 public class Home extends JFrame {
     private Cinema cinema = App.c1;
     Employee employee;
-    String empName;
-    public int movieindex;
-    public int partyindex;
+    public int movieindex,partyindex;
     Font poppinsMedium,poppinsBold;
 
 
@@ -58,16 +54,9 @@ public class Home extends JFrame {
 
         cinemaCombo = new JComboBox<>();
         scheduleLabel = new JLabel();
-        jLabel2 = new JLabel();
-        jComboBox2 = new JComboBox<>();
-        jLabel4 = new JLabel();
-        jLabel6 = new JLabel(new ImageIcon("logo.png"));
+        scheduleCombo = new JComboBox<>();
         jButton1 = new JButton();
         avseatsnum = new JButton();
-        jLabel7 = new JLabel();
-        jLabel8 = new JLabel();
-        jLabel9 = new JLabel();
-        scheduleLabel0 = new JLabel();
         upperTitleLabel = new JLabel();
         lowerTitleLabel = new JLabel();
         titleLabel = new JLabel();
@@ -90,7 +79,7 @@ public class Home extends JFrame {
         homeFrame.setLocationRelativeTo(null);
         homeFrame.setLayout(null);
         homeFrame.setResizable(false);
-        JPanel backPanel = new JPanel();
+        backPanel = new JPanel();
         backPanel.setBackground(new Color(15,0,0));
         backPanel.setSize(600,400);
 
@@ -120,14 +109,14 @@ public class Home extends JFrame {
         scheduleLabel.setText("Schedule");
         scheduleLabel.setBounds(176,197,66,21);
 
-        jComboBox2.setBackground(new java.awt.Color(239, 239, 239));
-        jComboBox2.setMaximumRowCount(5);
-        jComboBox2.setBounds(262,197,161,21);
-        jComboBox2.setFont(poppinsMedium.deriveFont(12f));
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(cinema.hall(movieindex).getParties()));
-        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+        scheduleCombo.setBackground(new java.awt.Color(239, 239, 239));
+        scheduleCombo.setMaximumRowCount(5);
+        scheduleCombo.setBounds(262,197,161,21);
+        scheduleCombo.setFont(poppinsMedium.deriveFont(12f));
+        scheduleCombo.setModel(new javax.swing.DefaultComboBoxModel<>(cinema.hall(movieindex).getParties()));
+        scheduleCombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox2ActionPerformed(evt);
+                scheduleComboActionPerformed(evt);
             }
         });
 
@@ -156,7 +145,7 @@ public class Home extends JFrame {
         jButton1.setForeground(Color.WHITE);
 
         homeFrame.add(cinemaCombo);
-        homeFrame.add(jComboBox2);
+        homeFrame.add(scheduleCombo);
         homeFrame.add(scheduleLabel);
         homeFrame.add(lowerTitleLabel);
         homeFrame.add(upperTitleLabel);
@@ -170,44 +159,31 @@ public class Home extends JFrame {
     }
 
 
-
-
-
-
-
-
-
-
         //REHAT BENTAR
-
-
-
 
     private void cinemaComboActionPerformed(java.awt.event.ActionEvent evt) {
     }
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
         movieindex =  cinemaCombo.getSelectedIndex();
-        partyindex = jComboBox2.getSelectedIndex();
+        partyindex = scheduleCombo.getSelectedIndex();
         new Seat(movieindex, partyindex, employee).setVisible(true);
         avseatsnum.setText(""+cinema.hall(movieindex).party(partyindex).countAvSeats());
 
 
     }
 
-    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
+    private void scheduleComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scheduleComboActionPerformed
 
-        avseatsnum.setText(""+cinema.hall(cinemaCombo.getSelectedIndex()).party(jComboBox2.getSelectedIndex()).countAvSeats());
+        avseatsnum.setText(""+cinema.hall(cinemaCombo.getSelectedIndex()).party(scheduleCombo.getSelectedIndex()).countAvSeats());
 
     }
 
     private void avseatsnumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_avseatsnumActionPerformed
-        avseatsnum.setText(""+cinema.hall(cinemaCombo.getSelectedIndex()).party(jComboBox2.getSelectedIndex()).countAvSeats());
+        avseatsnum.setText(""+cinema.hall(cinemaCombo.getSelectedIndex()).party(scheduleCombo.getSelectedIndex()).countAvSeats());
     }
 
-    /**
-     * @param args the command line arguments
-     */
+
     public static void main(String args[]) {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -221,21 +197,12 @@ public class Home extends JFrame {
     private JButton avseatsnum;
     private JButton jButton1;
     private JComboBox<String> cinemaCombo;
-    private JComboBox<String> jComboBox2;
+    private JComboBox<String> scheduleCombo;
     private JLabel scheduleLabel;
-    private JLabel scheduleLabel0;
-    private JLabel jLabel2;
-    private JLabel jLabel4;
-    private JLabel jLabel6;
-    private JLabel jLabel7;
-    private JLabel jLabel8;
-    private JLabel jLabel9;
     private JFrame homeFrame;
-
-
     private JLabel upperTitleLabel;
     private JLabel lowerTitleLabel;
-
     private JLabel titleLabel;
+    private JPanel backPanel;
 
 }
