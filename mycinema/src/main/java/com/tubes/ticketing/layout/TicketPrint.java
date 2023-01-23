@@ -29,9 +29,7 @@ public class TicketPrint extends JFrame {
     }
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/mm/yyyy hh:mm:ss");  
         LocalDateTime now = LocalDateTime.now();
-
-    @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+        
     private void initComponents() {
 
         jPanel1 = new JPanel();

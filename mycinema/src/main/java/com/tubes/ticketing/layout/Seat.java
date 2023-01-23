@@ -17,9 +17,6 @@ public class Seat extends JFrame {
     Font poppinsMedium, poppinsBold;
 
 
-    /**
-     * Creates new form SeatLight
-     */
     public Seat(int movieindex, int partyindex, Employee employee) {
         initComponents();
         this.movieindex = movieindex;
@@ -130,24 +127,25 @@ public class Seat extends JFrame {
         setResizable(false);
         setLocationRelativeTo(null);
 
+        seatFrame = new JFrame("Login");
+        seatFrame.setSize(600, 400);
+        seatFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        seatFrame.setLocationRelativeTo(null);
+        seatFrame.setLayout(null);
+        seatFrame.setResizable(false);
+
+        seatFrame.setVisible(true);
+
         jPanel9.setBackground(new java.awt.Color(200, 204, 212));
 
         jPanel21.setBackground(new java.awt.Color(200, 204, 212));
 
         b29.setText("29");
-        b29.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b29ActionPerformed(evt);
-            }
-        });
+        b29.addActionListener(evt -> b29ActionPerformed(evt));
         b29.setSelected(!cinema.hall(movieindex).party(partyindex).seat('B', 29).state());
 
         b28.setText("28");
-        b28.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b28ActionPerformed(evt);
-            }
-        });
+        b28.addActionListener(evt -> b28ActionPerformed(evt));
         b28.setSelected(!cinema.hall(movieindex).party(partyindex).seat('B', 28).state());
 
         GroupLayout jPanel21Layout = new GroupLayout(jPanel21);
@@ -171,35 +169,19 @@ public class Seat extends JFrame {
         jPanel6.setBackground(new java.awt.Color(200, 204, 212));
 
         c1.setText("1");
-        c1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                c1ActionPerformed(evt);
-            }
-        });
+        c1.addActionListener(evt -> c1ActionPerformed(evt));
         c1.setSelected(!cinema.hall(movieindex).party(partyindex).seat('C', 1).state());
 
         c3.setText("3");
-        c3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                c3ActionPerformed(evt);
-            }
-        });
+        c3.addActionListener(evt -> c3ActionPerformed(evt));
         c3.setSelected(!cinema.hall(movieindex).party(partyindex).seat('C', 3).state());
 
         c2.setText("2");
-        c2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                c2ActionPerformed(evt);
-            }
-        });
+        c2.addActionListener(evt -> c2ActionPerformed(evt));
         c2.setSelected(!cinema.hall(movieindex).party(partyindex).seat('C', 2).state());
 
         c0.setText("0");
-        c0.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                c0ActionPerformed(evt);
-            }
-        });
+        c0.addActionListener(evt -> c0ActionPerformed(evt));
         c0.setSelected(!cinema.hall(movieindex).party(partyindex).seat('C', 0).state());
 
         GroupLayout jPanel6Layout = new GroupLayout(jPanel6);
@@ -238,11 +220,7 @@ public class Seat extends JFrame {
         a9.setSelected(!cinema.hall(movieindex).party(partyindex).seat('A', 9).state());
 
         a8.setText("8");
-        a8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                a8ActionPerformed(evt);
-            }
-        });
+        a8.addActionListener(evt -> a8ActionPerformed(evt));
         a8.setSelected(!cinema.hall(movieindex).party(partyindex).seat('A', 8).state());
 
         GroupLayout jPanel16Layout = new GroupLayout(jPanel16);
@@ -267,11 +245,7 @@ public class Seat extends JFrame {
         jPanel22.setBackground(new java.awt.Color(200, 204, 212));
 
         c9.setText("9");
-        c9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                c9ActionPerformed(evt);
-            }
-        });
+        c9.addActionListener(evt -> c9ActionPerformed(evt));
         c9.setSelected(!cinema.hall(movieindex).party(partyindex).seat('C', 9).state());
 
         c8.setText("8");
@@ -1466,5 +1440,6 @@ c9.setSelected(!cinema.hall(movieindex).party(partyindex).seat('C', 9).state());
     private JPanel jPanel9;
     private JLabel moviename;
     private JLabel partydetail;
-    // End of variables declaration//GEN-END:variables
+
+    private JFrame seatFrame;
 }
